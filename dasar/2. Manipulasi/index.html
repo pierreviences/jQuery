@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kotak {
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+            margin: 10px 0;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p id="q1">Apa nama ibukota Indonesia?</p>
+    <p id="jwb"></p>
+    <button id="btn">Jawaban</button>
+    <div id="shape" class="kotak"></div>
+    <button id="btn1">Ubah jadi lingkaran</button>
+    <h1 id="helo">Hello world</h1>
+    <button id="btn2">Ubah warna (add class)</button>
+    <h1 id="helo2" class="red">Hello world</h1>
+    <button id="btn3">Ubah warna (remove class)</button>
+    <h1 id="helo3">Hello world</h1>
+    <button id="btn4">Ubah warna (togle class)</button>
+
+
+    <script>
+
+        // manipulasi html
+        $("#btn").click(() => {
+            $("#jwb").html("<b>Jakarta</b>")
+        })
+
+        // manipulasi css
+        $("#btn1").click(() => {
+            $("#shape").css("border-radius", "50%")
+        })
+
+        $("#btn2").click(() => {
+            $("#helo").addClass("red")
+        })
+
+        $("#btn3").click(() => {
+            $("#helo2").removeClass("red")
+        })
+
+        $("#btn4").click(() => {
+            $("#helo3").toggleClass("red")
+        })
+    </script>
+</body>
+
+</html>
