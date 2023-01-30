@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+    <p id="klik">klik saya</p>
+    <p id="dbl">double klik saya</p>
+    <p id="hover"> arahin cursor ke saya</p>
+    <input id="keypres" type="text" placeholder="ini keypress"><br>
+    <input id="keydown" type="text" placeholder="ini keydown"><br>
+    <input id="keyup" type="text" placeholder="ini keyup"><br>
+    <input id="focus" type="text" placeholder="ini focus"><br>
+    <input id="blur" type="text" placeholder="ini blur"><br>
+
+    <form action="#" id="myform">
+        <input type="text" placeholder="isi aja">
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        /*
+            windows event
+            -> resize : ketika di resize
+            -> scroll : ketika di scroll
+
+            mouse event
+            -> click : ketika di klik
+            -> dblclik : ketika di klik klik
+            -> hover : ketika diarahain
+
+            keybaord event
+            -> keypress : ketika di pencet keyboard
+            -> keydown : sama kaya keypress
+            -> keyup : ketika selesai dipencet keyboardnya
+
+            form event
+            -> focus : ketika di pencet (entah itu input/dll)
+            -> blur : ketika selesai di pencet (entah itu input/dll)
+            -> submit : ketika mencet submit
+        */
+
+        $(document).ready(function () {
+            $(window).resize(function () {
+                alert("halaman di resize")
+            })
+            $(window).scroll(function () {
+                alert("halaman di scroll")
+            })
+
+
+            $("#klik").click(function () {
+                $("#klik").hide()
+            })
+            $("#dbl").dblclick(function () {
+                $("#dbl").hide()
+            })
+            $("#hover").hover(function () {
+                $("#hover").hide()
+            })
+
+
+            $("#keypres").keypress(function () {
+                alert("ini keypress")
+            })
+            $("#keydown").keydown(function () {
+                alert("ini keydown")
+            })
+            $("#keyup").keyup(function () {
+                alert("ini keyup")
+            })
+
+
+            $("#focus").focus(function () {
+                $("#focus").hide()
+            })
+            $("#blur").blur(function () {
+                alert("ini blur")
+            })
+            $("#myform").submit(function () {
+                alert("ini submit")
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>
