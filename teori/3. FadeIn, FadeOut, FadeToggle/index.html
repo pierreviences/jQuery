@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        #test,
+        #test2 {
+
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        #test2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="test"></div>
+    <div id="test2"></div>
+    <button id="fadeout">Klik FadeOut</button>
+    <button id="fadeIn">Klik FadeIn</button>
+    <button id="fadeToggle">Klik FadeToggle</button>
+    <button id="fadeTo">Klik FadeTo</button>
+
+    <script>
+        /*
+        "fadeIn", "fadeOut", "fadeToggle", dan "fadeTo" adalah metode animasi dalam bibliotek JavaScript JQuery yang digunakan untuk menampilkan, menyembunyikan, mengatakan bergantian tampil dan tidak tampil, dan mengubah transparansi elemen HTML.
+
+        - fadeIn: menampilkan elemen dengan efek transparansi (muncul perlahan)
+            * fadeIn(speed, callback)  
+            * speed => bisa number / string => (2000 / "slow", "fast")  
+
+        - fadeOut: menyembunyikan elemen dengan efek transparansi (menghilang perlahan)
+            * fadeOut(speed, callback)  
+            * speed => bisa number / string => (2000 / "slow", "fast")  
+
+        - fadeToggle: bergantian tampil dan tidak tampil dengan efek transparansi
+            * sama aja kaya toggle
+
+        - fadeTo: mengubah transparansi elemen ke tingkat tertentu dalam waktu tertentu.
+            * fadeTo(speed, opacity, callback)  
+        */
+
+        $(document).ready(function () {
+            $("#test2").hide()
+            $("#fadeIn").click(function () {
+                $("#test2").fadeIn(2000, function () {
+                    alert("berhasil fadeIn")
+                })
+            })
+            $("#fadeout").click(function () {
+                $("#test").fadeOut(2000, function () {
+                    alert("berhasil fadeOut")
+                })
+            })
+
+            $("#fadeToggle").click(function () {
+                $("#test").fadeToggle()
+            })
+
+            $("#fadeTo").click(function () {
+                $("#test").fadeTo(3000, 0.1)
+                $("#test2").fadeTo(3000, 0.1)
+            })
+        })
+
+
+    </script>
+
+</body>
+
+</html>
