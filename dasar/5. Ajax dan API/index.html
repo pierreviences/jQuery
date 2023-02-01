@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <button onclick="tampilkanJoke()">Tampilkan Joke</button>
+    <br>
+    <br>
+    <div id="hasil"></div>
+
+    <script>
+        function tampilkanJoke() {
+            var xhr = new XMLHttpRequest
+            xhr.open("GET", " https://v2.jokeapi.dev/joke/Programming,Miscellaneous?blacklistFlags=nsfw,religious,political,racist,sexist,explicit")
+            xhr.send()
+
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    console.log("sukses")
+                    let response = JSON.parse(this.response)
+                    console.log(response)
+                    var output = document.createElement("div")
+                    output.innerHTML = response.joke
+                    $("#hasil").html(output)
+                }
+            }
+        }   
+    </script>
+
+</body>
+
+</html>
