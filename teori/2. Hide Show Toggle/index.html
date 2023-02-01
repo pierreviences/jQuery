@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        #test {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="test"></div>
+    <button id="hilang">Hilang</button>
+    <button id="muncul">Muncul</button>
+    <button id="duaduanya">Hilang dan Muncul</button>
+    <script>
+        $(document).ready(function () {
+            $("#hilang").click(function () {
+                // dengan cara javascript
+                document.getElementById("test").style.display = "none"
+
+                // dengan cara jquery
+                $("#test").hide()
+            })
+            $("#muncul").click(function () {
+                // dengan cara javascript
+                document.getElementById("test").style.display = "block"
+
+                // dengan cara jquery
+                $("#test").show()
+            })
+
+            $("#duaduanya").click(function () {
+                // dengan cara javascript
+                /*
+                let kotak = document.getElementById("test")
+                console.log(kotak.style.display)
+                if (kotak.style.display == "none") {
+                    kotak.style.display = "block"
+                } else {
+                    kotak.style.display = "none"
+                }
+                */
+
+                // dengan cara jquery
+                $("#test").toggle()
+
+            })
+        })
+    </script>
+</body>
+
+</html>
