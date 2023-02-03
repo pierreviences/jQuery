@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: relative;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="anmBtn">Play</button>
+
+    <div></div>
+
+    <script>
+        /*
+            Jika ingin memakai animasi, 
+            wajib positionnya absolute, realtive atau fixed
+
+            .animate({property css, }, spped, callback)
+        */
+        $(document).ready(function () {
+            $("#anmBtn").click(function () {
+                $("div").animate({ left: "100px", width: "150px", height: "150px" })
+                $("div").animate({ top: "100px", width: "200px", height: "200px" }, 4000,
+                    function () {
+                        alert("berhasil menganimasikan element")
+                    })
+            })
+        })
+    </script>
+</body>
+
+</html>
