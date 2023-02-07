@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <input type="text" id="bilangan1"> +
+    <input type="text" id="bilangan2"> =
+    <input type="text" id="hasil">
+    <button id="mybtn">hasil</button>
+    <script>
+
+        // .val() -> get nilai input
+        // .val("isi apa aja") -> set 
+
+
+        $(document).ready(function () {
+            $("#mybtn").click(function () {
+                var bil1 = $("#bilangan1").val()
+                var bil2 = $("#bilangan2").val()
+                var hasil = parseInt(bil1) + parseInt(bil2)
+                $("#hasil").val(hasil)
+            })
+        })
+    </script>
+</body>
+
+</html>
