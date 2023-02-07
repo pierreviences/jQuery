@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h2>Menu Minuman</h2>
+    <ul id="items">
+        <li>teh</li>
+        <li>kopi</li>
+    </ul>
+    <input type="text" id="tambah">
+    <button id="mybtn">Tambah Minuman</button>
+
+
+    <script>
+        // append -> nambah di akhir
+        // prepend -> nambah di awal
+        $(document).ready(function () {
+            $("#mybtn").click(function () {
+                var minumanbaru = $("#tambah").val()
+                console.log(minumanbaru)
+                $("#items").prepend(`<li>${minumanbaru}</li>`)
+                $("#items").append(`<li>${minumanbaru}</li>`)
+            })
+
+        })
+    </script>
+</body>
+
+</html>
